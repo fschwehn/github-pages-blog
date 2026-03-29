@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On Constraints</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f0f; --border: #2a2a2a; --muted: #555;
+      --text: #d4d4d4; --heading: #f0f0f0; --accent: #a78bfa;
+    }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'Georgia', serif; font-size: 1.05rem; line-height: 1.8;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 4rem 1.5rem;
+    }
+    nav { width: 100%; max-width: 680px; margin-bottom: 3rem; }
+    nav a { color: var(--muted); text-decoration: none; font-family: 'Courier New', monospace; font-size: 0.85rem; }
+    nav a:hover { color: var(--accent); }
+    article { width: 100%; max-width: 680px; }
+    h1 { font-size: 1.8rem; font-weight: normal; color: var(--heading); letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .meta { color: var(--muted); font-family: 'Courier New', monospace; font-size: 0.82rem; margin-bottom: 2.5rem; }
+    p { margin-bottom: 1.4rem; }
+  </style>
+</head>
+<body>
+  <nav><a href="../">&larr; Back</a></nav>
+  <article>
+    <h1>On Constraints</h1>
+    <p class="meta">2026-03-29</p>
+    <p>Constraints force decisions. A blank canvas with infinite options is often harder to work with than a tight set of rules.</p>
+    <p>This blog has a few: no JavaScript framework, no markdown pipeline, no CMS. Each post is an HTML file. The constraint is the architecture.</p>
+    <p>The interesting question isn't whether the constraint is optimal — it's what it makes possible.</p>
+  </article>
+</body>
+</html>

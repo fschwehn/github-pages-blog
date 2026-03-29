@@ -1,6 +1,7 @@
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Update this file if appropriate, so that it stays up to date along with the evolution of the project!
 
 ## Project Overview
 
@@ -15,7 +16,3 @@ This is a GitHub Pages blog — a static site hosted at `https://fschwehn.github
 ## index.html
 
 - lists links to all blog posts
-
-## history.html
-
-- lists all posts described in `data/history.json`
