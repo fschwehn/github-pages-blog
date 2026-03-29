@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog</title>
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --bg: #0f0f0f;
+                --surface: #181818;
+                --border: #2a2a2a;
+                --muted: #555;
+                --text: #d4d4d4;
+                --heading: #f0f0f0;
+                --accent: #a78bfa;
+                --accent-dim: #7c5cbf;
+            }
+
+            body {
+                background: var(--bg);
+                color: var(--text);
+                font-family: "Georgia", serif;
+                font-size: 1.05rem;
+                line-height: 1.7;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 4rem 1.5rem;
+            }
+
+            header {
+                width: 100%;
+                max-width: 680px;
+                margin-bottom: 4rem;
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 2rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+                font-weight: normal;
+                letter-spacing: -0.02em;
+                color: var(--heading);
+            }
+
+            header p {
+                color: var(--muted);
+                margin-top: 0.4rem;
+                font-size: 0.9rem;
+                font-family: "Courier New", monospace;
+            }
+
+            main {
+                width: 100%;
+                max-width: 680px;
+                flex: 1;
+            }
+
+            .post-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .post-item {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .post-item a {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 1rem;
+                padding: 1.2rem 0;
+                text-decoration: none;
+                color: var(--text);
+                transition: color 0.15s;
+            }
+
+            .post-item a:hover {
+                color: var(--accent);
+            }
+
+            .post-item a:hover .post-date {
+                color: var(--accent-dim);
+            }
+
+            .post-title {
+                flex: 1;
+            }
+
+            .post-date {
+                color: var(--muted);
+                font-size: 0.82rem;
+                font-family: "Courier New", monospace;
+                white-space: nowrap;
+                transition: color 0.15s;
+            }
+
+            .empty {
+                color: var(--muted);
+                font-size: 0.9rem;
+                font-style: italic;
+            }
+
+            footer {
+                margin-top: 4rem;
+                color: var(--muted);
+                font-size: 0.8rem;
+                font-family: "Courier New", monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Blog</h1>
+            <p>fschwehn.github.io</p>
+        </header>
+
+        <main>
+            <ul class="post-list" id="posts">
+                <li class="empty">No posts yet.</li>
+            </ul>
+        </main>
+
+        <footer>&mdash;</footer>
+
+        <script>
+            // Add posts here as they are created.
+            // Each entry: { href, title, date } where date is "YYYY-MM-DD".
+            const posts = [
+                // { href: "posts/2026-03-29T22-08-45.html", title: "First Post", date: "2026-03-29" },
+            ];
+
+            if (posts.length > 0) {
+                const list = document.getElementById("posts");
+                list.innerHTML = posts
+                    .map(
+                        (p) => `
+        <li class="post-item">
+          <a href="${p.href}">
+            <span class="post-title">${p.title}</span>
+            <span class="post-date">${p.date}</span>
+          </a>
+        </li>
+      `,
+                    )
+                    .join("");
+            }
+        </script>
+    </body>
+</html>
