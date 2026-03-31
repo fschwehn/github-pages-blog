@@ -136,20 +136,14 @@
         <footer>&mdash;</footer>
 
         <script>
-            // Add posts here as they are created.
-            // Each entry: { href, title, date } where date is "YYYY-MM-DD".
-            const posts = [
-                { href: "posts/2026-03-29T22-00-00.html", title: "Defaults",        date: "2026-03-29" },
-                { href: "posts/2026-03-29T20-15-00.html", title: "Small Things",    date: "2026-03-29" },
-                { href: "posts/2026-03-29T14-30-00.html", title: "On Constraints",  date: "2026-03-29" },
-                { href: "posts/2026-03-29T10-00-00.html", title: "Hello, World",    date: "2026-03-29" },
-            ];
-
-            if (posts.length > 0) {
-                const list = document.getElementById("posts");
-                list.innerHTML = posts
-                    .map(
-                        (p) => `
+            fetch("posts.json")
+                .then((r) => r.json())
+                .then((posts) => {
+                    if (posts.length === 0) return;
+                    const list = document.getElementById("posts");
+                    list.innerHTML = posts
+                        .map(
+                            (p) => `
         <li class="post-item">
           <a href="${p.href}">
             <span class="post-title">${p.title}</span>
@@ -157,9 +151,9 @@
           </a>
         </li>
       `,
-                    )
-                    .join("");
-            }
+                        )
+                        .join("");
+                });
         </script>
     </body>
 </html>
